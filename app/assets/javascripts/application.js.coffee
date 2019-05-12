@@ -36,5 +36,8 @@ document.addEventListener 'turbolinks:load', ->
     $('html, body').animate({
       scrollTop: 0
     }, 500);
+  $('.toggle-location').on 'click', (e) ->
+    e.preventDefault()
+    $('#location-tab').tab('show')
 
   $('.toast').toast({delay: 10000}).toast('show')

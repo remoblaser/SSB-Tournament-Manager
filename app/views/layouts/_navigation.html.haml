@@ -35,14 +35,16 @@
       - if user_signed_in?
         %li.nav-item.dropdown
           %a.nav-link.dropdown-toggle#navbarDropdown{href:"#", role:"button", 'data-toggle'=>'dropdown', 'aria-haspopup'=>'true', 'aria-expanded'=>'false'}
-            %span.material-icons.d-none.d-lg-block.ml-lg-3
-              - if current_user.admin?
-                = 'supervisor_account'
-              - else
-                = 'account_circle'
+            %span.d-none.d-lg-flex.ml-lg-3
+              %span.material-icons.mr-2
+                - if current_user.admin?
+                  = 'supervisor_account'
+                - else
+                  = 'account_circle'
+              = current_user.player.gamer_tag
             %span.d-block.d-lg-none
               - if user_signed_in?
-                = 'Account'
+                = current_user.player.gamer_tag
               - else 
                 = 'Login'
           .dropdown-menu{'aria-labelledby':'navbarDropdown'}

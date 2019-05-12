@@ -55,7 +55,8 @@
             .tournament__details__single.tournament__details__single--last
               %strong
                 - if @tournament.location.present?
-                  = @tournament.location
+                  %a.toggle-location{href: '#location'}
+                    = @tournament.location
                 - else
                   = @tournament.city
               %span
